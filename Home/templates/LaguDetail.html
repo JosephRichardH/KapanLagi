@@ -1,0 +1,23 @@
+{% extends 'HeaderFooter.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 mb-5"></div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 mb-5">
+            <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="{{ barang.gambar.url }}" alt="">
+                <div class="card-body">
+                    <h3 class="card-text">{{ barang.nama_barang }}</h3>
+                    <h6 class="card-text">{{ barang.harga }}</h6>
+                    <h6 class="card-text">Deskripsi Produk</h6>
+                    <p class="card-text">{{ barang.deskripsi }}</p>
+                </div>
+            </div>
+            <a href="{% url 'toko' %}">Kembali</a>
+        </div>
+        <div class="col-lg-3 col-md-3 mb-5"></div>            
+    </div>
+</div>
+{% endblock %}
