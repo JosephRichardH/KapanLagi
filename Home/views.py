@@ -65,5 +65,9 @@ def PrintDetail(request, lagu_id):
 
 def LirikLagu(request):
     satu_lagu = Lagu.objects.all()
+<<<<<<< HEAD
     return render(request, 'Lirik.html', {'Lagus': satu_lagu})
 
+=======
+    return render(request, 'Lirik.html', {'KumpulanLagu': satu_lagu})
+>>>>>>> development

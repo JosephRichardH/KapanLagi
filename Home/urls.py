@@ -11,5 +11,5 @@ urlpatterns = [
     path('signout/', views.Lagu_Signout, name='LaguSignOut'),
     path('lirik/', views.LirikLagu, name='lirik'),
     path('print/<int:lagu_id>', views.PrintDetail, name='print'),
-    path('detail/<int:lagu_id>', views.LaguDetail, name='LaguDetail'),
+    path('lirik/<int:lagu_id>', views.LaguDetail, name='LaguDetail'),
 ]
