@@ -8,3 +8,4 @@ class Lagu(models.Model):
     teks = models.TextField(max_length=5000)
     def __str__(self):
         return self.judul
+
