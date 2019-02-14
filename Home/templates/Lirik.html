@@ -6,7 +6,7 @@
 {% for data in KumpulanLagu %}
 <div class="row">
     <div class="col-8">
-        <h6>{{ data.artis }} - {{ data.judul }}</h6>
+        <a href="{% url 'LaguDetail' lagu_id=data.id %}">{{ data.artis }} - {{ data.judul }}</a>
     </div>
 </div>
 {% endfor %}
