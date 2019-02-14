@@ -59,4 +59,4 @@ def PrintDetail(request, lagu_id):
 
 def LirikLagu(request):
     satu_lagu = Lagu.objects.all()
-    return render(request, 'Lirik.html', {'Lagus': satu_lagu})
+    return render(request, 'Lirik.html', {'KumpulanLagu': satu_lagu})
