@@ -1,0 +1,13 @@
+{% extends 'HeaderFooter.html' %}
+{% load static %}
+
+{% block content %}
+<div class="mt-5"></div>
+{% for data in KumpulanLagu %}
+<div class="row">
+    <div class="col-8">
+        <h6>{{ data.artis }} - {{ data.judul }}</h6>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

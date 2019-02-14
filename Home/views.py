@@ -6,8 +6,11 @@ from .models import Lagu
 
 # Create your views here.
 def LaguPost(request):
-    #Lagus = Lagu.objects.all()
     return render(request, 'Contoh0.html', {})
+
+def LirikLagu(request):
+    KumpulanLagu = Lagu.objects.all()
+    return render(request, 'Lirik.html', {'KumpulanLagu' : KumpulanLagu})
 
 #def Lagu_Input(request):
 #    if request.method == "POST":
@@ -20,6 +23,10 @@ def LaguPost(request):
 #        form = PostForm()
 #        return render(request, 'LaguInput.html', {'form': form})
 #
-#def Lagu_Detail(request, barang_id):
-#    Lagus = Lagu.objects.get(pk=barang_id)
-#    return render(request, 'LaguDetail.html', {'Lagus':Lagu})
+def LaguDetail(request, lagu_id):
+    satu_lagu = Lagu.objects.get(pk=lagu_id)
+    return render(request, 'LaguDetail.html', {'Lagus': satu_lagu})
+
+def PrintDetail(request, lagu_id):
+    satu_lagu = Lagu.objects.get(pk=lagu_id)
+    return render(request, 'print.html', {'Lagus': satu_lagu})
