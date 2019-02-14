@@ -1,0 +1,19 @@
+{% extends 'HeaderFooter.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col-9">
+        <div class="card border-info mb-3">
+            <div class="card-body">
+                <h3 class="card-title">{{ Lagus.judul }}</h3>
+                <h5 class="card-title">{{ Lagus.artis }}</h5>
+                <p class="card-text">{{ Lagus.teks }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+    </div>
+</div>
+
+{% endblock %}
