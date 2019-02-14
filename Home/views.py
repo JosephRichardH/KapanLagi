@@ -7,35 +7,7 @@ from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login, logout
 
 # Create your views here.
-<<<<<<< HEAD
-def LaguPost(request):
-    return render(request, 'Contoh0.html', {})
-
-def LirikLagu(request):
-    KumpulanLagu = Lagu.objects.all()
-    return render(request, 'Lirik.html', {'KumpulanLagu' : KumpulanLagu})
-
-#def Lagu_Input(request):
-#    if request.method == "POST":
-#        form = PostForm(request.POST, request.FILES)
-#        if form.is_valid():
-#            post = form.save(commit=False)
-#            post.save()
-#            return redirect(LaguPost)
-#    else:
-#        form = PostForm()
-#        return render(request, 'LaguInput.html', {'form': form})
-#
-def LaguDetail(request, lagu_id):
-    satu_lagu = Lagu.objects.get(pk=lagu_id)
-    return render(request, 'LaguDetail.html', {'Lagus': satu_lagu})
-
-def PrintDetail(request, lagu_id):
-    satu_lagu = Lagu.objects.get(pk=lagu_id)
-    return render(request, 'print.html', {'Lagus': satu_lagu})
-=======
 def Lagu_Post(request):
-    #Lagus = Lagu.objects.all()
     return render(request, 'Contoh0.html', {})
 
 def Lagu_Input(request):
@@ -48,10 +20,6 @@ def Lagu_Input(request):
     else:
         form = PostForm()
         return render(request, 'LaguInput.html', {'form': form})
-#
-#def Lagu_Detail(request, barang_id):
-#    Lagus = Lagu.objects.get(pk=barang_id)
-#    return render(request, 'LaguDetail.html', {'Lagus':Lagu})
 
 def Lagu_Signup(request):
     if request.method == "POST":
@@ -80,4 +48,15 @@ def Lagu_Signout(request):
         logout(request)
         
         return redirect (Lagu_Post)
->>>>>>> fe74e940c5922f119aa55b5c76a9417ffc8639f9
+
+def LaguDetail(request, lagu_id):
+    satu_lagu = Lagu.objects.get(pk=lagu_id)
+    return render(request, 'LaguDetail.html', {'Lagus': satu_lagu})
+
+def PrintDetail(request, lagu_id):
+    satu_lagu = Lagu.objects.get(pk=lagu_id)
+    return render(request, 'print.html', {'Lagus': satu_lagu})
+
+def LirikLagu(request):
+    satu_lagu = Lagu.objects.all()
+    return render(request, 'Lirik.html', {'Lagus': satu_lagu})
