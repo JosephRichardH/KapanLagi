@@ -10,6 +10,7 @@
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
     </head>
     <body>
+<<<<<<< HEAD
       <header>
         <nav class="navbar navbar-expand-sm bg-light fixed-top">
           <ul class="navbar-nav">
@@ -26,6 +27,34 @@
         </nav>
         <div class="mb-5"></div>
       </header>
+=======
+        <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
+            <a class="navbar-brand" href="#">KapanLagi</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Lirik</a>
+                </li>
+                <li>
+                  <form class="logout-link" action="{%url 'LaguSignOut'%}" method="POST">
+                    {%csrf_token %}
+                  <button type="submit">Logout</button>
+                  </form>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+
+          </nav>
+          </header>
+>>>>>>> fe74e940c5922f119aa55b5c76a9417ffc8639f9
     {% block content %}
     {% endblock %}
     <footer>
