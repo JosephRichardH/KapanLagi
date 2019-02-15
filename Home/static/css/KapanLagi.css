@@ -120,3 +120,7 @@ svg {
       stroke-dasharray: 0 87.5%;
     }
 }
+
+pre:hover {
+    background-color: lightblue;
+  }
