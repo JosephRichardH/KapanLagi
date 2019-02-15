@@ -10,7 +10,7 @@
             <div class="card-body">
                 <h3 class="card-title">{{ Lagus.judul }}</h3>
                 <h5 class="card-title">{{ Lagus.artis }}</h5>
-                <pre class="card-text">{{ Lagus.teks }}</pre>
+                <pre class="card-text lirik">{{ Lagus.teks }}</pre>
             </div>
         </div>
         <a href="{% url 'print' lagu_id=Lagus.id %}" target="_blank">Print Lirik</a>
