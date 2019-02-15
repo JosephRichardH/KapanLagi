@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 __pycache__
 .vscode
 env_pair
@@ -7,3 +8,8 @@ __pychache__
 env_pair
 .vscode
 >>>>>>> development
+=======
+__pycache__
+env_pair
+.vscode
+>>>>>>> b92a0b2bd359d4b26f8e216d455f38749a126e57
