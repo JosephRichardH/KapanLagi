@@ -30,7 +30,7 @@ def Lagu_SignIn(request):
             if 'next' in request.POST:
                 return redirect (request.POST.get('next'))
             else: 
-                return redirect (Lagu_Post)
+                return redirect (Tampilan_Home)
     else:
         form=AuthenticationForm()
     return render(request,'LaguSignIn.html',{'form':form})
@@ -40,7 +40,7 @@ def Lagu_Signout(request):
         
         logout(request)
         
-        return redirect (Lagu_Post)
+        return redirect (Tampilan_Home)
 
 @login_required(login_url=Lagu_SignIn)
 def Lagu_Input(request):
@@ -49,7 +49,7 @@ def Lagu_Input(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.save()
-            return redirect(Lagu_Post)
+            return redirect(Tampilan_Home)
     else:
         form = PostForm()
         return render(request, 'LaguInput.html', {'form': form})
@@ -66,13 +66,11 @@ def PrintDetail(request, lagu_id):
 
 def LirikLagu(request):
     satu_lagu = Lagu.objects.all()
-    query = request.GET.get("query")
+    query = request.GET.get('q')
     if query:
-        queryset_list=Lagu.filter(
-            Q(judul_icontains=query)|
-            Q(artis_icontains=query)|
-            Q(teks_icontains=query)
-            ).distinct()
+        Lagus = Lagu.objects.filter(Q(judul__icontains=query)|Q(artis__icontains=query)|Q(teks__icontains=query)).distinct()
+        return render(request, 'Lirik.html', {'Lagus': Lagus})
+
+#    queryset_list=Lagu.filter(Q(judul_icontains=query)|Q(artis_icontains=query)|Q(teks_icontains=query)).distinct()
     else:
-        queryset_list=""
-    return render(request, 'Lirik.html', {'Lagus': satu_lagu}, {'queries':queryset_list})
+        return render(request, 'Lirik.html', {'Lagus': satu_lagu})
