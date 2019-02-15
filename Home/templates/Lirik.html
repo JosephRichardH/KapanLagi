@@ -1,0 +1,23 @@
+{% extends 'HeaderFooter.html' %}
+{% load static %}
+
+{% block content %}
+<div class="mt-5" style=></div><br><br>
+
+<div class="container-fluid pt-3">
+    <div class="d-flex justify-content-center">
+        <form method="GET" action='' class="searchbar">
+        <input type="text" name="q" placeholder="Search lyric" value="{{ request.GET.q }}">
+        <input type="submit" value="Search">
+        </form>
+    </div>
+</div>
+
+{% for data in Lagus %}
+<div class="row">
+    <div class="col-8">
+        <a href="{% url 'LaguDetail' lagu_id=data.id %}">{{ data.artis }} - {{ data.judul }}</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
