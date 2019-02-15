@@ -12,17 +12,6 @@
     </head>
     <body>
         <header>
-<<<<<<< HEAD
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
-            <a class="navbar-brand;" href="{% url 'home'%}">KapanLagi</a>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'home'%}">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'lirik'%}">Lirik</a>
-=======
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <a class="navbar-brand" href="{% url 'home' %}">KapanLagi</a>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -41,25 +30,25 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'Lagu_Input' %}">Input</a>
->>>>>>> development
+
                 </li>
                 
                 {% if user.is_authenticated %}
                 <li>
                   <form class="logout-link" action="{%url 'LaguSignOut' %}" method="POST">
                     {%csrf_token %}
-                  <button type="submit">Hello, {{request.user.username}}! Welcome!</button>
+                  <button style="margin-top:5px;" type="submit">Hello, {{request.user.username}}! Welcome!</button>
                 </form>
                 </li>
                 {% else %}
                 <li>
                   <form class="login-link" action="{%url 'LaguSignIn'%}">
-                  <button type="submit">Login</button>
+                  <button style="margin-top:5px;" type="submit">Login</button>
                   </form>
                 </li>
                 <li>
                   <form class="login-link" action="{%url 'LaguSignUp'%}">
-                  <button type="submit">SignUp</button>
+                  <button style="margin-top:5px;" type="submit">SignUp</button>
                   </form>
                 </li>
                 {% endif %}
