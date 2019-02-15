@@ -2,8 +2,9 @@
 {% load static %}
 
 {% block content %}
-<div class="mt-5"></div>
-{% for data in KumpulanLagu %}
+<div class="mt-5" style=></div><br><br>
+{% for data in Lagus %}
+
 <div class="row">
     <div class="col-8">
         <a href="{% url 'LaguDetail' lagu_id=data.id %}">{{ data.artis }} - {{ data.judul }}</a>
