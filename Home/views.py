@@ -10,7 +10,6 @@ from django.contrib.auth.decorators import login_required
 def Tampilan_Home(request):
     return render(request, 'Contoh0.html', {})
 
-
 def Lagu_SignUp(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
@@ -54,7 +53,6 @@ def Lagu_Input(request):
         form = PostForm()
         return render(request, 'LaguInput.html', {'form': form})
 
-
 def LaguDetail(request, lagu_id):
     satu_lagu = Lagu.objects.get(pk=lagu_id)
     return render(request, 'LaguDetail.html', {'Lagus': satu_lagu})
@@ -70,7 +68,5 @@ def LirikLagu(request):
     if query:
         Lagus = Lagu.objects.filter(Q(judul__icontains=query)|Q(artis__icontains=query)|Q(teks__icontains=query)).distinct()
         return render(request, 'Lirik.html', {'Lagus': Lagus})
-
-#    queryset_list=Lagu.filter(Q(judul_icontains=query)|Q(artis_icontains=query)|Q(teks_icontains=query)).distinct()
     else:
         return render(request, 'Lirik.html', {'Lagus': satu_lagu})
