@@ -23,12 +23,6 @@
                   <a class="nav-link" href="{% url 'lirik' %}">Lirik</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'LaguSignIn' %}">Sign In</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'LaguSignUp' %}">Sign Up</a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link" href="{% url 'Lagu_Input' %}">Input</a>
 
                 </li>
@@ -65,7 +59,7 @@
             <div class="col-md-12">
               <div class="mb-1 flex-center">
                   <div class="footer-copyright text-center">© 2019 Copyright:
-                    <a href="">KapanLagi.com</a>
+                    <a href="{%url 'LaguSignIn'%}">KapanLagi.com</a>
                   </div>
               </div>
             </div>
