@@ -2,11 +2,21 @@
 {% load static %}
 
 {% block content %}
-<div class="mt-5"></div>
-{% for data in KumpulanLagu %}
+<div class="mt-5" style=></div><br><br>
+
+<div class="container-fluid pt-3">
+    <div class="d-flex justify-content-center">
+        <form method="GET" class="searchbar">
+        <input type="text" class="search_input" name="q" placeholder="Search lyric" >
+        <input type="submit" style="" value="Search"></input></input>
+        </form>
+    </div>
+</div>
+
+{% for data in Lagus %}
 <div class="row">
     <div class="col-8">
-        <a href="{% url 'LaguDetail' lagu_id=data.id %}">{{ data.artis }} - {{ data.judul }}</a>
+        <a href="{% url 'LaguDetail' lagu_id=data.id %}">{{ data.artis }} - {{ data.judul }}&q={{ request.GET.q }}</a>
     </div>
 </div>
 {% endfor %}
