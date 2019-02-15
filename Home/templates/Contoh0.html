@@ -10,8 +10,8 @@
                 <symbol id="s-text">
                     <text text-anchor="middle"
                         x="50%"
-                        y="35%"
-                        class="webcoderskull">
+                        y="35%";
+                        class ="webcoderskull">
                         Lirik 
                     </text>
                     <text text-anchor="middle"
@@ -35,10 +35,10 @@
 
 <div class="container-fluid pt-3">
     <div class="d-flex justify-content-center">
-        <div class="searchbar">
-        <input class="search_input" type="text" name="" placeholder="Search...">
-        <a href="#" class="search_icon"><i class="fa fa-search"></i></a>
-        </div>
+        <form method="GET" class="searchbar">
+        <input type="text" class="search_input" name="q" placeholder="Search lyric" >
+        <input type="submit" style="" value="Search"></input></input>
+        </form>
     </div>
 </div>
 {% endblock %}   
