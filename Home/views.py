@@ -7,17 +7,9 @@ from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 
-def Lagu_Post(request):
-    query = request.GET.get("query")
-    if query:
-        queryset_list=Lagu.filter(
-            Q(judul_icontains=query)|
-            Q(artis_icontains=query)|
-            Q(teks_icontains=query)
-            ).distinct()
-    else:
-        queryset_list=""
-    return render(request, 'Contoh0.html', {'queries':queryset_list})
+def Tampilan_Home(request):
+    return render(request, 'Contoh0.html', {})
+
 
 def Lagu_SignUp(request):
     if request.method == "POST":
@@ -74,4 +66,13 @@ def PrintDetail(request, lagu_id):
 
 def LirikLagu(request):
     satu_lagu = Lagu.objects.all()
-    return render(request, 'Lirik.html', {'Lagus': satu_lagu})
+    query = request.GET.get("query")
+    if query:
+        queryset_list=Lagu.filter(
+            Q(judul_icontains=query)|
+            Q(artis_icontains=query)|
+            Q(teks_icontains=query)
+            ).distinct()
+    else:
+        queryset_list=""
+    return render(request, 'Lirik.html', {'Lagus': satu_lagu}, {'queries':queryset_list})

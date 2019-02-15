@@ -4,7 +4,7 @@ from django.conf.urls import url
 from Home import views as views1
 
 urlpatterns = [
-    path('', views.Lagu_Post, name='home'),
+    path('', views.Tampilan_Home, name='home'),
     path('input/', views.Lagu_Input, name='Lagu_Input'),
     path('signup/', views.Lagu_SignUp, name='LaguSignUp'),
     path('signin/', views.Lagu_SignIn, name='LaguSignIn'),
