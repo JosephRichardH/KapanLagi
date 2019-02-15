@@ -1,0 +1,13 @@
+{% extends 'HeaderFooter.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container" style="display:block;margin:auto; padding-left: 100px; padding-right: 100px; margin-top:30px;margin-bottom:80px;">
+    <h2 style="margin-top:100px;">New Song</h2>
+    <form method = "POST" class="post-form" enctype="multipart/form-data">
+        {%csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-dark">Save</button>
+    </form>
+    </div>
+{% endblock %}   

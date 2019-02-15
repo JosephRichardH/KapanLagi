@@ -1,0 +1,25 @@
+{% extends 'HeaderFooter.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container" style="display:block;margin:auto; padding-left: 100px; padding-right: 100px; margin-top:30px;margin-bottom:80px;">
+    <h2 style="margin-top:100px;">Login User</h2>
+    {% if user.is_authenticated %}
+                You have been authenticated.
+                Please return to <a href="{% url 'home' %}">Home</a> page.
+                {% else %}
+                <form  method = "POST" class="site-form" action="">
+                    {%csrf_token %}
+                    {{form.as_p}}
+                    {% if request.GET.next %}
+                        <input type="hidden" name="next" value="{{request.GET.next}}">
+                    {% endif %}    
+                    <button type="submit" value = "login" class="btn btn-dark">Save</button>
+                </form>
+                {% endif %}
+    
+    
+    
+    
+</div>
+{% endblock %}   

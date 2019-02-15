@@ -1,0 +1,82 @@
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/KapanLagi.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="{% static 'js/jquey-3.3.1.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    </head>
+    <body>
+        <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="{% url 'home' %}">KapanLagi</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'lirik' %}">Lirik</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'Lagu_Input' %}">Input</a>
+
+                </li>
+                
+                {% if user.is_authenticated %}
+                <li>
+                  <form class="logout-link" action="{%url 'LaguSignOut' %}" method="POST">
+                    {%csrf_token %}
+                  <button style="margin-top:5px;" type="submit">Hello, {{request.user.username}}! Welcome!</button>
+                </form>
+                </li>
+                {% else %}
+                <li>
+                  <form class="login-link" action="{%url 'LaguSignIn'%}">
+                  <button style="margin-top:5px;" type="submit">Login</button>
+                  </form>
+                </li>
+                <li>
+                  <form class="login-link" action="{%url 'LaguSignUp'%}">
+                  <button style="margin-top:5px;" type="submit">SignUp</button>
+                  </form>
+                </li>
+                {% endif %}
+
+              </ul>
+        </div>
+      </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <div class="container-fluid pt-3">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="mb-1 flex-center">
+                  <div class="footer-copyright text-center">© 2019 Copyright:
+                    <a href="{%url 'LaguSignIn'%}">KapanLagi.com</a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+                <div class="mb-1 flex-center">
+                  <div class="footer-copyright text-center">
+                    <a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
+                    <a href="https://twitter.com/" target="_blank" class="fa fa-twitter"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </footer>
+    </body>
+</html>
