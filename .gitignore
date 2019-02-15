@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 __pycache__
 .vscode
 env_pair
+=======
+__pychache__
+env_pair
+.vscode
+>>>>>>> development
