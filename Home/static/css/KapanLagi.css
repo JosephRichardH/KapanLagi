@@ -121,6 +121,10 @@ svg {
     }
 }
 
-pre:hover {
-    background-color: lightblue;
+.lirik:hover {
+    background: none repeat scroll 0 0 lightblue;
   }
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
