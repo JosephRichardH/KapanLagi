@@ -6,9 +6,9 @@
 
 <div class="container-fluid pt-3">
     <div class="d-flex justify-content-center">
-        <form method="GET" class="searchbar">
-        <input type="text" class="search_input" name="q" placeholder="Search lyric" >
-        <input type="submit" style="" value="Search"></input></input>
+        <form method="GET" action='' class="searchbar">
+        <input type="text" name="q" placeholder="Search lyric" value="{{ request.GET.q }}">
+        <input type="submit" value="Search">
         </form>
     </div>
 </div>
@@ -16,7 +16,7 @@
 {% for data in Lagus %}
 <div class="row">
     <div class="col-8">
-        <a href="{% url 'LaguDetail' lagu_id=data.id %}">{{ data.artis }} - {{ data.judul }}&q={{ request.GET.q }}</a>
+        <a href="{% url 'LaguDetail' lagu_id=data.id %}">{{ data.artis }} - {{ data.judul }}</a>
     </div>
 </div>
 {% endfor %}
